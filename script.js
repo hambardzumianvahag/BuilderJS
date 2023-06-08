@@ -15,16 +15,26 @@ function openCity(evt, btnName) {
 	document.getElementById(btnName).style.display = "block";
 	evt.currentTarget.className += " active";
 }
-let elemDiv=document.querySelector('#elements')
+let elemDiv = document.querySelector('#elements')
 let styleBtn = document.querySelector('#style-btn')
 let elemBtn = document.querySelector('#elem-btn')
 let styleTab = document.querySelector('#style')
 let btns = document.querySelectorAll('.filt-button')
 btns.forEach((item) => {
-	item.addEventListener('click', (e) => {
-		elemBtn.style.background='#f1f1f1'
-		elemDiv.style.display='none'	
+	item.addEventListener('click', () => {
+		elemBtn.style.background = '#f1f1f1'
+		styleBtn.style.background = '#ccc'
+		elemDiv.style.display = 'none'
 		styleTab.style.display = 'block'
 		styleBtn.className += ' active'
 	})
+})
+
+let saveBtn = document.querySelector('.save')
+saveBtn.addEventListener('click', () => {
+	elemBtn.style.background = '#ccc'
+	styleBtn.style.background = '#f1f1f1'
+	elemDiv.style.display = 'block'
+	styleTab.style.display = 'none'
+	elemBtn.className += ' active'
 })
