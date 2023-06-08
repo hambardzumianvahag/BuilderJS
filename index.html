@@ -29,27 +29,29 @@
 
 	<section class="property-section">
 		<aside class="left-aside">
-			<div class="tab">
-				<button class="tablinks" id="elem-btn" onclick="openCity(event, 'elements')">Elements</button>
-				<button class="tablinks" id="style-btn" onclick="openCity(event, 'style')">Style</button>
-			</div>
+			<div class="container">
 
-			<!-- Tab content -->
-			<div id="elements" class="tabcontent">
-				<h1>Choose Element</h1>
-				<div class="filt-menu">
-					<button class="Header filt-button">Header</button>
-					<button class="Button filt-button">Button</button>
-					<button class="Logo filt-button">Logo</button>
-					<button class="Section filt-button">Section</button>
-					<button class="Text filt-button">Text</button>
-					<button class="Image filt-button">Image</button>
+				<ul class="tabs">
+					<li class="tab-link current" id="elem-btn" data-tab="tab-1">Elements</li>
+					<li class="tab-link" id="style-btn" data-tab="tab-2">Style</li>
+				</ul>
+
+				<div id="tab-1" class="tab-content current">
+					<h1>Choose Element</h1>
+					<div class="filt-menu">
+						<button class="Header filt-button">Header</button>
+						<button class="Button filt-button">Button</button>
+						<button class="Logo filt-button">Logo</button>
+						<button class="Section filt-button">Section</button>
+						<button class="Text filt-button">Text</button>
+						<button class="Image filt-button">Image</button>
+					</div>
 				</div>
-			</div>
+				<div id="tab-2" class="tab-content">
+					<h1>Style for selected elements</h1>
+					<button class="save">Apply Changes</button>
+				</div>
 
-			<div id="style" class="tabcontent">
-				<h1>Style for selected elements</h1>
-				<button class="save">Apply Changes</button>
 			</div>
 		</aside>
 		<main class="right-main">

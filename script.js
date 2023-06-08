@@ -1,24 +1,26 @@
-function openCity(evt, btnName) {
-	// Get all elements with class="tabcontent" and hide them
-	let tabcontent = document.getElementsByClassName("tabcontent");
-	for (let i = 0; i < tabcontent.length; i++) {
-		tabcontent[i].style.display = "none";
-	}
+let tabs = document.querySelectorAll('ul.tabs li');
 
-	// Get all elements with class="tablinks" and remove the class "active"
-	let tablinks = document.getElementsByClassName("tablinks");
-	for (i = 0; i < tablinks.length; i++) {
-		tablinks[i].className = tablinks[i].className.replace(" active", "");
-	}
+tabs.forEach(function (tab) {
+	tab.addEventListener('click', function () {
+		let tab_id = this.getAttribute('data-tab');
 
-	// Show the current tab, and add an "active" class to the button that opened the tab
-	document.getElementById(btnName).style.display = "block";
-	evt.currentTarget.className += " active";
-}
-let elemDiv = document.querySelector('#elements')
+		tabs.forEach(function (tab) {
+			tab.classList.remove('current');
+		});
+
+		let tabContents = document.querySelectorAll('.tab-content');
+		tabContents.forEach(function (content) {
+			content.classList.remove('current');
+		});
+
+		this.classList.add('current');
+		document.getElementById(tab_id).classList.add('current');
+	});
+});
+let elemDiv = document.querySelector('#tab-1')
 let styleBtn = document.querySelector('#style-btn')
 let elemBtn = document.querySelector('#elem-btn')
-let styleTab = document.querySelector('#style')
+let styleTab = document.querySelector('#tab-2')
 let btns = document.querySelectorAll('.filt-button')
 btns.forEach((item) => {
 	item.addEventListener('click', () => {
