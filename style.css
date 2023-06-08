@@ -149,6 +149,7 @@
 
 
 .filt-button {
+	cursor: pointer;
 	width: 77px;
 	height: 33px;
 	background-color: #BBBFCA;
