@@ -31,7 +31,7 @@ btns.forEach((item) => {
 		styleBtn.className += ' active'
 	})
 })
-let headerStyle = `<p class="buil-filt-text">BUILDER FILTERS</p>
+let headerStyle = `
 <div class="create-atribute-box">
 <button class="create-header">Header</button>
 <hr>
@@ -45,6 +45,80 @@ let headerStyle = `<p class="buil-filt-text">BUILDER FILTERS</p>
 	<button class="creat-box-button end">End</button>
 	</div>
 	<hr>
+	<p class="atribute-box-text">Font Size</p>
+	<input type="text" placeholder="Font Size" class="font-size">
+	<hr>
+	<p class="atribute-box-text">Margin</p>
+	<div class="margin-box-property">
+	<div class="margin-property">
+	<input type="text" placeholder="Margin Top" class="margin-input">
+		<input type="text" placeholder="Margin Right" class="margin-input">
+		<input type="text" placeholder="Margin Bottom" class="margin-input">
+		<input type="text" placeholder="Margin Left" class="margin-input">
+		</div>
+</div>
+</div>`
+let buttonStyle = `
+<div class="create-atribute-box">
+<button class="create-header">Button</button>
+<hr>
+<p class="atribute-box-text">Button</p>
+<input type="text" placeholder="Type your text... " class="your-text">
+<hr>
+<p class="atribute-box-text">Flex - Text</p>
+<div class="create-box-button-parent">
+<button class="creat-box-button start">Start</button>
+<button class="creat-box-button center">Center</button>
+	<button class="creat-box-button end">End</button>
+	</div>
+	<hr>
+	<p class="atribute-box-text">Font Size</p>
+	<input type="text" placeholder="Font Size" class="font-size">
+	<hr>
+	<p class="atribute-box-text">Margin</p>
+	<div class="margin-box-property">
+	<div class="margin-property">
+	<input type="text" placeholder="Margin Top" class="margin-input">
+		<input type="text" placeholder="Margin Right" class="margin-input">
+		<input type="text" placeholder="Margin Bottom" class="margin-input">
+		<input type="text" placeholder="Margin Left" class="margin-input">
+		</div>
+</div>
+</div>`
+let textStyle = `
+<div class="create-atribute-box">
+<button class="create-header">Text Area</button>
+<hr>
+<p class="atribute-box-text">Button</p>
+<textarea class='your-text' placeholder='Type your text'></textarea>
+<hr>
+<p class="atribute-box-text">Flex - Text</p>
+<div class="create-box-button-parent">
+<button class="creat-box-button start">Start</button>
+<button class="creat-box-button center">Center</button>
+	<button class="creat-box-button end">End</button>
+	</div>
+	<hr>
+	<p class="atribute-box-text">Font Size</p>
+	<input type="text" placeholder="Font Size" class="font-size">
+	<hr>
+	<p class="atribute-box-text">Margin</p>
+	<div class="margin-box-property">
+	<div class="margin-property">
+	<input type="text" placeholder="Margin Top" class="margin-input">
+		<input type="text" placeholder="Margin Right" class="margin-input">
+		<input type="text" placeholder="Margin Bottom" class="margin-input">
+		<input type="text" placeholder="Margin Left" class="margin-input">
+		</div>
+</div>
+</div>`
+let imageStyle = `
+<div class="create-atribute-box">
+<button class="create-header">Image</button>
+<hr>
+<p class="atribute-box-text">Image</p>
+<input type="text" placeholder="Write URL of image" class="your-text">
+<hr>
 	<p class="atribute-box-text">Margin</p>
 	<div class="margin-box-property">
 	<div class="margin-property">
@@ -57,16 +131,13 @@ let headerStyle = `<p class="buil-filt-text">BUILDER FILTERS</p>
 </div>`
 const messages = {
 	Header: headerStyle,
-	Button: 'bbbb',
-	Logo: 'cccc',
-	Section: 'gggg',
-	Text: 'dddd',
-	Image: 'eeee'
+	Button: buttonStyle,
+	Text: textStyle,
+	Image: imageStyle
 };
 
 function printmessage(e) {
 	const targetText = e.target.innerHTML;
-
 	if (messages.hasOwnProperty(targetText)) {
 		const message = messages[targetText];
 		let styleContent = document.querySelector('.style-content');
@@ -77,12 +148,30 @@ function printmessage(e) {
 		let styleContent = document.querySelector('.style-content');
 		styleContent.innerHTML = headerStyle;
 	}
+	else if (targetText === 'Button') {
+		let styleContent = document.querySelector('.style-content');
+		styleContent.innerHTML = buttonStyle;
+	}
+	else if (targetText === 'Text') {
+		let styleContent = document.querySelector('.style-content');
+		styleContent.innerHTML = textStyle;
+	}
+	else if (targetText === 'Button') {
+		let styleContent = document.querySelector('.style-content');
+		styleContent.innerHTML = imageStyle;
+	}
+	let x = document.querySelector('.your-text')
+	console.log(x)
 }
 btns.forEach((item) => {
 	item.addEventListener('click', printmessage)
 })
 
 let saveBtn = document.querySelector('.save')
+saveBtn.classList.add('filt-button')
+saveBtn.style.margin = '0 auto'
+saveBtn.style.display = 'flex'
+
 saveBtn.addEventListener('click', () => {
 	elemBtn.style.background = '#ccc'
 	styleBtn.style.background = '#f1f1f1'
