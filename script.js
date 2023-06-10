@@ -169,16 +169,16 @@ function printmessage(e) {
 		let margin = document.querySelectorAll('.margin')
 		margin.forEach((item) => {
 			item.addEventListener('input', (e) => {
-				if (e.target.classList.contains('margin-top')) {
+				if (e.target.placeholder == 'Margin Top') {
 					h1.style.marginTop = `${e.target.value}px`
 				}
-				if (e.target.classList.contains('margin-bottom')) {
+				if (e.target.placeholder == 'Margin Bottom') {
 					h1.style.marginBottom = `${e.target.value}px`
 				}
-				if (e.target.classList.contains('margin-left')) {
+				if (e.target.placeholder == 'Margin Left') {
 					h1.style.marginLeft = `${e.target.value}px`
 				}
-				if (e.target.classList.contains('margin-right')) {
+				if (e.target.placeholder == 'Margin Right') {
 					h1.style.marginRight = `${e.target.value}px`
 				}
 			})
