@@ -126,6 +126,7 @@ ul.tabs li.current {
 	gap: 36px 80px;
 }
 
+
 .h1-value{
 	display: flex;
 }
@@ -312,7 +313,7 @@ hr {
 	justify-content: center;
 }
 
-.margin-input {
+.margin{
 	width: 120px;
 	padding: 5px 10px;
 	border: none;
