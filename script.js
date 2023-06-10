@@ -51,10 +51,10 @@ let headerStyle = `
 	<p class="atribute-box-text">Margin</p>
 	<div class="margin-box-property">
 	<div class="margin-property">
-	<input type="text" placeholder="Margin Top" class="margin-input">
-		<input type="text" placeholder="Margin Right" class="margin-input">
-		<input type="text" placeholder="Margin Bottom" class="margin-input">
-		<input type="text" placeholder="Margin Left" class="margin-input">
+	<input type="text" placeholder="Margin Top" class="margin margin-top">
+		<input type="text" placeholder="Margin Right" class="margin margin-right">
+		<input type="text" placeholder="Margin Bottom" class="margin margin-bottom">
+		<input type="text" placeholder="Margin Left" class="margin margin-left">
 		</div>
 </div>
 </div>`
@@ -160,6 +160,51 @@ function printmessage(e) {
 		let styleContent = document.querySelector('.style-content');
 		styleContent.innerHTML = imageStyle;
 	}
+	function mainPage() {
+
+		let inp = document.querySelector('.your-text')
+		let h1 = document.querySelector('.h1-value')
+		let fontsSize = document.querySelector('.font-size')
+
+		let margin = document.querySelectorAll('.margin')
+		margin.forEach((item) => {
+			item.addEventListener('input', (e) => {
+				if (e.target.classList.contains('margin-top')) {
+					h1.style.marginTop = `${e.target.value}px`
+				}
+				if (e.target.classList.contains('margin-bottom')) {
+					h1.style.marginBottom = `${e.target.value}px`
+				}
+				if (e.target.classList.contains('margin-left')) {
+					h1.style.marginLeft = `${e.target.value}px`
+				}
+				if (e.target.classList.contains('margin-right')) {
+					h1.style.marginRight = `${e.target.value}px`
+				}
+			})
+		})
+		fontsSize.addEventListener('input', (e) => {
+			let count = e.target.value
+			h1.style.fontSize = `${count}px`
+		})
+
+		inp.addEventListener('input', (e) => {
+			h1.innerText = e.target.value
+		})
+		let flex = document.querySelectorAll('.creat-box-button')
+		flex.forEach(item => {
+			item.addEventListener('click', (e) => {
+				if (e.target.innerText == 'Start') {
+					h1.style.justifyContent = 'start'
+				} else if (e.target.innerText == 'Center') {
+					h1.style.justifyContent = 'center'
+				} else if (e.target.innerText == 'End') {
+					h1.style.justifyContent = 'end'
+				}
+			})
+		})
+	}
+	mainPage()
 }
 btns.forEach((item) => {
 	item.addEventListener('click', printmessage)
