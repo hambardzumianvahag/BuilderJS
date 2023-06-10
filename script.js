@@ -160,8 +160,6 @@ function printmessage(e) {
 		let styleContent = document.querySelector('.style-content');
 		styleContent.innerHTML = imageStyle;
 	}
-	let x = document.querySelector('.your-text')
-	console.log(x)
 }
 btns.forEach((item) => {
 	item.addEventListener('click', printmessage)
