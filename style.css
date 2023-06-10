@@ -126,7 +126,9 @@ ul.tabs li.current {
 	gap: 36px 80px;
 }
 
-
+.h1-value{
+	display: flex;
+}
 .filt-button {
 	cursor: pointer;
 	width: 77px;
@@ -161,6 +163,7 @@ p {
 
 .build {
 	color: #202323;
+	width: 250px;
 	padding: 20px;
 	font-size: 20px;
 	font-weight: bold;
