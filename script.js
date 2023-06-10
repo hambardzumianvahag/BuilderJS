@@ -51,10 +51,10 @@ let headerStyle = `
 	<p class="atribute-box-text">Margin</p>
 	<div class="margin-box-property">
 	<div class="margin-property">
-	<input type="text" placeholder="Margin Top" class="margin margin-top">
-		<input type="text" placeholder="Margin Right" class="margin margin-right">
-		<input type="text" placeholder="Margin Bottom" class="margin margin-bottom">
-		<input type="text" placeholder="Margin Left" class="margin margin-left">
+	<input type="text" placeholder="Margin Top" class="margin">
+		<input type="text" placeholder="Margin Right" class="margin">
+		<input type="text" placeholder="Margin Bottom" class="margin">
+		<input type="text" placeholder="Margin Left" class="margin">
 		</div>
 </div>
 </div>`
