@@ -53,10 +53,10 @@ let headerStyle = `
 	<p class="atribute-box-text">Margin</p>
 	<div class="margin-box-property">
 	<div class="margin-property">
-	<input type="text" placeholder="Margin Top" class="margin-input">
-		<input type="text" placeholder="Margin Right" class="margin-input">
-		<input type="text" placeholder="Margin Bottom" class="margin-input">
-		<input type="text" placeholder="Margin Left" class="margin-input">
+	<input type="text" placeholder="Margin Top" class="margin">
+		<input type="text" placeholder="Margin Right" class="margin">
+		<input type="text" placeholder="Margin Bottom" class="margin">
+		<input type="text" placeholder="Margin Left" class="margin">
 		</div>
 </div>
 </div>`;
@@ -158,14 +158,8 @@ function printmessage(e) {
 		let styleContent = document.querySelector(".style-content");
 		styleContent.innerHTML = imageStyle;
 	}
-	let x = document.querySelector(".your-text");
-	let btnsMain = document.querySelector('.button-main')
-
-		btnsMain.addEventListener('input', (e) => {
-			let build = document.querySelector('.build')
-			console.log(e.target.value);
-			build.textContent = e.target.value
-		})
+	let x = document.querySelector('.your-text')
+	console.log(x)
 }
 btns.forEach((item) => {
 	item.addEventListener("click", printmessage);

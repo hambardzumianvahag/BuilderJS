@@ -137,6 +137,9 @@ ul.tabs li.current {
 }
 
 
+.h1-value{
+	display: flex;
+}
 .filt-button {
 	cursor: pointer;
 	width: 77px;
@@ -321,7 +324,7 @@ hr {
 	justify-content: center;
 }
 
-.margin-input {
+.margin{
 	width: 120px;
 	padding: 5px 10px;
 	border: none;
