@@ -159,8 +159,8 @@ ul.tabs li.current {
 	background-position: center;
 	background-image: url(./img/bac\ img.png);
 	flex-direction: column;
-	padding: 50px;
 	gap: 100px;
+	padding: 50px;
 }
 
 .right-main h1,
