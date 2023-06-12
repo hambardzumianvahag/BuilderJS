@@ -1,42 +1,44 @@
-let tabs = document.querySelectorAll('ul.tabs li');
+let tabs = document.querySelectorAll("ul.tabs li");
 
 tabs.forEach(function (tab) {
-	tab.addEventListener('click', function () {
-		let tab_id = this.getAttribute('data-tab');
+	tab.addEventListener("click", function () {
+		let tab_id = this.getAttribute("data-tab");
 
 		tabs.forEach(function (tab) {
-			tab.classList.remove('current');
+			tab.classList.remove("current");
 		});
 
-		let tabContents = document.querySelectorAll('.tab-content');
+		let tabContents = document.querySelectorAll(".tab-content");
 		tabContents.forEach(function (content) {
-			content.classList.remove('current');
+			content.classList.remove("current");
 		});
 
-		this.classList.add('current');
-		document.getElementById(tab_id).classList.add('current');
+		this.classList.add("current");
+		document.getElementById(tab_id).classList.add("current");
 	});
 });
-let elemDiv = document.querySelector('#tab-1')
-let styleBtn = document.querySelector('#style-btn')
-let elemBtn = document.querySelector('#elem-btn')
-let styleTab = document.querySelector('#tab-2')
-let btns = document.querySelectorAll('.filt-button')
+let elemDiv = document.querySelector("#tab-1");
+let styleBtn = document.querySelector("#style-btn");
+let elemBtn = document.querySelector("#elem-btn");
+let styleTab = document.querySelector("#tab-2");
+let btns = document.querySelectorAll(".filt-button");
+let btnMain = document.querySelectorAll(".Button");
+
 btns.forEach((item) => {
-	item.addEventListener('click', (e) => {
-		elemBtn.style.background = '#f1f1f1'
-		styleBtn.style.background = '#ccc'
-		elemDiv.style.display = 'none'
-		styleTab.style.display = 'block'
-		styleBtn.className += ' active'
-	})
-})
+	item.addEventListener("click", (e) => {
+		elemBtn.style.background = "#f1f1f1";
+		styleBtn.style.background = "#ccc";
+		elemDiv.style.display = "none";
+		styleTab.style.display = "block";
+		styleBtn.className += " active";
+	});
+});
 let headerStyle = `
 <div class="create-atribute-box">
 <button class="create-header">Header</button>
 <hr>
 <p class="atribute-box-text">Header</p>
-<input type="text" placeholder="Type your text... " class="your-text">
+<input type="text" placeholder="Type your text... " class="your-text header">
 <hr>
 <p class="atribute-box-text">Flex - Text</p>
 <div class="create-box-button-parent">
@@ -57,13 +59,13 @@ let headerStyle = `
 		<input type="text" placeholder="Margin Left" class="margin-input">
 		</div>
 </div>
-</div>`
+</div>`;
 let buttonStyle = `
 <div class="create-atribute-box">
 <button class="create-header">Button</button>
 <hr>
 <p class="atribute-box-text">Button</p>
-<input type="text" placeholder="Type your text... " class="your-text">
+<input type="text" placeholder="Type your text... " class="your-text button-main">
 <hr>
 <p class="atribute-box-text">Flex - Text</p>
 <div class="create-box-button-parent">
@@ -84,13 +86,13 @@ let buttonStyle = `
 		<input type="text" placeholder="Margin Left" class="margin-input">
 		</div>
 </div>
-</div>`
+</div>`;
 let textStyle = `
 <div class="create-atribute-box">
 <button class="create-header">Text Area</button>
 <hr>
 <p class="atribute-box-text">Button</p>
-<textarea class='your-text' placeholder='Type your text'></textarea>
+<textarea class='your-text text-main' placeholder='Type your text'></textarea>
 <hr>
 <p class="atribute-box-text">Flex - Text</p>
 <div class="create-box-button-parent">
@@ -111,13 +113,13 @@ let textStyle = `
 		<input type="text" placeholder="Margin Left" class="margin-input">
 		</div>
 </div>
-</div>`
+</div>`;
 let imageStyle = `
 <div class="create-atribute-box">
 <button class="create-header">Image</button>
 <hr>
 <p class="atribute-box-text">Image</p>
-<input type="text" placeholder="Write URL of image" class="your-text">
+<input type="text" placeholder="Write URL of image" class="your-text img-main">
 <hr>
 	<p class="atribute-box-text">Margin</p>
 	<div class="margin-box-property">
@@ -128,54 +130,56 @@ let imageStyle = `
 		<input type="text" placeholder="Margin Left" class="margin-input">
 		</div>
 </div>
-</div>`
+</div>`;
 const messages = {
 	Header: headerStyle,
 	Button: buttonStyle,
 	Text: textStyle,
-	Image: imageStyle
+	Image: imageStyle,
 };
 
 function printmessage(e) {
 	const targetText = e.target.innerHTML;
 	if (messages.hasOwnProperty(targetText)) {
 		const message = messages[targetText];
-		let styleContent = document.querySelector('.style-content');
+		let styleContent = document.querySelector(".style-content");
 		styleContent.innerHTML = message;
 		delete messages[targetText];
-	}
-	else if (targetText === 'Header') {
-		let styleContent = document.querySelector('.style-content');
+	} else if (targetText === "Header") {
+		let styleContent = document.querySelector(".style-content");
 		styleContent.innerHTML = headerStyle;
-	}
-	else if (targetText === 'Button') {
-		let styleContent = document.querySelector('.style-content');
+	} else if (targetText === "Button") {
+		let styleContent = document.querySelector(".style-content");
 		styleContent.innerHTML = buttonStyle;
-	}
-	else if (targetText === 'Text') {
-		let styleContent = document.querySelector('.style-content');
+	} else if (targetText === "Text") {
+		let styleContent = document.querySelector(".style-content");
 		styleContent.innerHTML = textStyle;
-	}
-	else if (targetText === 'Button') {
-		let styleContent = document.querySelector('.style-content');
+	} else if (targetText === "Image") {
+		let styleContent = document.querySelector(".style-content");
 		styleContent.innerHTML = imageStyle;
 	}
-	let x = document.querySelector('.your-text')
-	console.log(x)
+	let x = document.querySelector(".your-text");
+	let btnsMain = document.querySelector('.button-main')
+
+		btnsMain.addEventListener('input', (e) => {
+			let build = document.querySelector('.build')
+			console.log(e.target.value);
+			build.textContent = e.target.value
+		})
 }
 btns.forEach((item) => {
-	item.addEventListener('click', printmessage)
-})
+	item.addEventListener("click", printmessage);
+});
 
-let saveBtn = document.querySelector('.save')
-saveBtn.classList.add('filt-button')
-saveBtn.style.margin = '0 auto'
-saveBtn.style.display = 'flex'
+let saveBtn = document.querySelector(".save");
+saveBtn.classList.add("filt-button");
+saveBtn.style.margin = "0 auto";
+saveBtn.style.display = "flex";
 
-saveBtn.addEventListener('click', () => {
-	elemBtn.style.background = '#ccc'
-	styleBtn.style.background = '#f1f1f1'
-	elemDiv.style.display = 'block'
-	styleTab.style.display = 'none'
-	elemBtn.className += ' active'
-})
+saveBtn.addEventListener("click", () => {
+	elemBtn.style.background = "#ccc";
+	styleBtn.style.background = "#f1f1f1";
+	elemDiv.style.display = "block";
+	styleTab.style.display = "none";
+	elemBtn.className += " active";
+});
