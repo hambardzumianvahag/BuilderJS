@@ -158,8 +158,51 @@ function printmessage(e) {
 		let styleContent = document.querySelector(".style-content");
 		styleContent.innerHTML = imageStyle;
 	}
-	let x = document.querySelector('.your-text')
-	console.log(x)
+	function mainPage() {
+
+		let inp = document.querySelector('.your-text')
+		let h1 = document.querySelector('.h1-value')
+		let fontsSize = document.querySelector('.font-size')
+
+		let margin = document.querySelectorAll('.margin')
+		margin.forEach((item) => {
+			item.addEventListener('input', (e) => {
+				if (e.target.placeholder == 'Margin Top') {
+					h1.style.marginTop = `${e.target.value}px`
+				}
+				if (e.target.placeholder == 'Margin Bottom') {
+					h1.style.marginBottom = `${e.target.value}px`
+				}
+				if (e.target.placeholder == 'Margin Left') {
+					h1.style.marginLeft = `${e.target.value}px`
+				}
+				if (e.target.placeholder == 'Margin Right') {
+					h1.style.marginRight = `${e.target.value}px`
+				}
+			})
+		})
+		fontsSize.addEventListener('input', (e) => {
+			let count = e.target.value
+			h1.style.fontSize = `${count}px`
+		})
+
+		inp.addEventListener('input', (e) => {
+			h1.innerText = e.target.value
+		})
+		let flex = document.querySelectorAll('.creat-box-button')
+		flex.forEach(item => {
+			item.addEventListener('click', (e) => {
+				if (e.target.innerText == 'Start') {
+					h1.style.justifyContent = 'start'
+				} else if (e.target.innerText == 'Center') {
+					h1.style.justifyContent = 'center'
+				} else if (e.target.innerText == 'End') {
+					h1.style.justifyContent = 'end'
+				}
+			})
+		})
+	}
+	mainPage()
 }
 btns.forEach((item) => {
 	item.addEventListener("click", printmessage);
