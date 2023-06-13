@@ -141,19 +141,21 @@ const messages = {
 
 function printmessage(e) {
 	const targetText = e.target.innerHTML;
-	if (messages.hasOwnProperty(targetText)) {
-		const message = messages[targetText];
-		let styleContent = document.querySelector('.style-content');
-		styleContent.innerHTML = message;
-		delete messages[targetText];
-	}
-	else if (targetText === 'Header') {
+	// if (messages.hasOwnProperty(targetText)) {
+	// 	const message = messages[targetText];
+	// 	let styleContent = document.querySelector('.style-content');
+	// 	styleContent.innerHTML = message;
+	// 	delete messages[targetText];
+	// }
+	if (targetText === 'Header') {
 		let styleContent = document.querySelector('.style-content');
 		styleContent.innerHTML = headerStyle;
+
 
 		///header
 
 		function createHeader() {
+			console.log('poxos');
 			let inp = document.querySelector('.your-header')
 			let h1 = document.querySelector('.h1-value')
 			let fontsSize = document.querySelector('.header-font-size')
@@ -256,7 +258,7 @@ function printmessage(e) {
 
 
 	}
-	else if (targetText === 'Text') {
+	else if (targetText == 'Text') {
 		let styleContent = document.querySelector('.style-content');
 		styleContent.innerHTML = textStyle;
 
