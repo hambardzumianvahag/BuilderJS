@@ -17,16 +17,19 @@
 	height: 50px;
 	padding: 1em;
 }
-.logo-div a{
+
+.logo-div a {
 	text-decoration: none;
 	color: #fff;
 }
-.logo-div{
+
+.logo-div {
 	padding: 0 25px;
 	display: flex;
 	gap: 10px;
 	align-items: center;
 }
+
 .menu {
 	display: flex;
 	flex-direction: row;
@@ -93,10 +96,12 @@
 	display: flex;
 	height: 950px;
 }
-.p-value{
+
+.p-value {
 	color: #fff;
 	display: flex;
 }
+
 .left-aside {
 	width: 30%;
 	height: 100%;
@@ -166,12 +171,16 @@ ul.tabs li.current {
 	gap: 100px;
 }
 
-.right-main h1{
+.right-main h1 {
 	color: #fff;
 }
 
 .right-main p {
 	margin-left: 100px;
+}
+
+.build-div {
+	display: flex;
 }
 
 .build {
@@ -184,6 +193,8 @@ ul.tabs li.current {
 	background-color: #C45E59;
 	border: none;
 	box-shadow: inset 0px 0px 10px 2px #000000;
+	display: flex;
+	justify-content: center;
 }
 
 .build:hover {

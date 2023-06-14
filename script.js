@@ -210,6 +210,7 @@ function printmessage(e) {
 
 		function createButton() {
 			let button = document.querySelector('.build')
+			let div=document.querySelector('.build-div')
 			let inp = document.querySelector('.your-button')
 			let fontsSize = document.querySelector('.button-font-size')
 			let margin = document.querySelectorAll('.button-margin')
@@ -245,11 +246,11 @@ function printmessage(e) {
 			flex.forEach(item => {
 				item.addEventListener('click', (e) => {
 					if (e.target.innerText == 'Start') {
-						button.style.justifyContent = 'start'
+						div.style.justifyContent = 'start'
 					} else if (e.target.innerText == 'Center') {
-						button.style.justifyContent = 'center'
+						div.style.justifyContent = 'center'
 					} else if (e.target.innerText == 'End') {
-						button.style.justifyContent = 'end'
+						div.style.justifyContent = 'end'
 					}
 				})
 			})
@@ -293,7 +294,7 @@ function printmessage(e) {
 			inp.addEventListener('input', (e) => {
 				textValue.innerText = e.target.value
 			})
-			
+
 			let flex = document.querySelectorAll('.text-creat-box-button')
 			flex.forEach(item => {
 				item.addEventListener('click', (e) => {
